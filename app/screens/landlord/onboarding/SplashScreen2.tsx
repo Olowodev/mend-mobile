@@ -1,30 +1,29 @@
 import React from "react";
 import { View, StyleSheet, Image } from "react-native";
-import { Button, Text } from "react-native-paper";
-import route from "../../../navigation/route";
+import { Text } from "react-native-paper";
+import Button from "../../../components/Button";
+import route from "../../../routes";
 import colors from "../../../utils/colors";
 
-const SplashScreen3 = ({ navigation }) => {
+const SplashScreen2 = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <View style={styles.midContainer}>
-        <Text style={styles.headline}>Rent faster and pay bills </Text>
+        <Text style={styles.headline}>Accounting Tool made for you</Text>
         <Image
           style={styles.img}
           source={require("../../../assets/splahes/1.png")}
         />
         <Text style={styles.text}>
-          List your vacant houses, management community utility bills and earn
-          bonus when you refer someone
+          Store, sort, retrieve, and summarize your financial data.
         </Text>
       </View>
       <Button
-        onPress={() => navigation.navigate(route.LANDLORD_LOGIN)}
-        contentStyle={{ padding: 10 }}
+        onPress={() => navigation.navigate(route.LANDLORD_SPLASH_3)}
         mode="contained"
         style={styles.btn}
       >
-        Get Started
+        Next
       </Button>
     </View>
   );
@@ -65,4 +64,4 @@ const styles = StyleSheet.create({
     width: "90%",
   },
 });
-export default SplashScreen3;
+export default SplashScreen2;

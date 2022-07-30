@@ -1,7 +1,8 @@
 import React from "react";
 import { View, StyleSheet, TouchableWithoutFeedback } from "react-native";
-import { Button, Text, TextInput } from "react-native-paper";
-import route from "../../../navigation/route";
+import { Text, TextInput } from "react-native-paper";
+import Button from "../../../components/Button";
+import routes from "../../../routes";
 import colors from "../../../utils/colors";
 
 const Login = ({ navigation }) => {
@@ -15,25 +16,16 @@ const Login = ({ navigation }) => {
         label="Password"
         right={<TextInput.Icon name="eye" />}
       />
-      <Button
-        contentStyle={{ padding: 10 }}
-        mode="contained"
-        onPress={() => console.log("hi")}
-        style={styles.btn}
-      >
+      <Button onPress={() => console.log("hi")} style={styles.btn}>
         Login
       </Button>
-      <Button
-        contentStyle={{ padding: 10 }}
-        onPress={() => console.log("hi")}
-        style={styles.btn}
-      >
+      <Button mode="text" onPress={() => console.log("hi")} style={styles.btn}>
         Forgot Password?
       </Button>
       <Text style={styles.txt}>
         Don’t have an account yet?{" "}
         <TouchableWithoutFeedback
-          onPress={() => navigation.navigate(route.LANDLORD_SIGN_UP)}
+          onPress={() => navigation.navigate(routes.LANDLORD_SIGN_UP)}
         >
           <Text style={{ color: colors.primary }}>Sign Up</Text>
         </TouchableWithoutFeedback>

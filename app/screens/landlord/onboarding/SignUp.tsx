@@ -1,7 +1,8 @@
 import React from "react";
 import { View, StyleSheet, TouchableWithoutFeedback } from "react-native";
-import { Button, Checkbox, Text, TextInput } from "react-native-paper";
-import route from "../../../navigation/route";
+import { Checkbox, Text, TextInput } from "react-native-paper";
+import Button from "../../../components/Button";
+import route from "../../../routes";
 import colors from "../../../utils/colors";
 
 const SignUp = ({ navigation }) => {
@@ -46,7 +47,6 @@ const SignUp = ({ navigation }) => {
       </View>
 
       <Button
-        contentStyle={{ padding: 10 }}
         mode="contained"
         onPress={() => navigation.navigate(route.LANDLORD_VERIFICATION)}
         style={styles.btn}

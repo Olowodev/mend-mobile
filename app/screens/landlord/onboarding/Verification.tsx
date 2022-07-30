@@ -3,11 +3,12 @@ import {
   View,
   StyleSheet,
   TouchableWithoutFeedback,
-  TextInput,
+  // TextInput,
 } from "react-native";
-import { Button, Text, TextInput as TextField } from "react-native-paper";
-import Codeverifier from "../../../components/reusables/codeverifier";
-import route from "../../../navigation/route";
+import { Text, TextInput as TextField } from "react-native-paper";
+import Button from "../../../components/Button";
+// import Codeverifier from "../../../components/reusables/codeverifier";
+import routes from "../../../routes";
 import colors from "../../../utils/colors";
 
 const Verification = ({ navigation }) => {
@@ -17,20 +18,22 @@ const Verification = ({ navigation }) => {
       <View>
         <Text style={styles.txt}>Enter your Verification Code</Text>
       </View>
-      {/* <View style={styles.cellContainer}>
-        <View style={styles.cell}>
-          <TextInput />
-        </View>
-        <View style={styles.cell}></View>
-        <View style={styles.cell}></View>
-        <View style={styles.cell}></View>
-        <TextInput secureTextEntry style={styles.input} />
-      </View> */}
-      <Codeverifier />
+
+      <TextField
+        mode="outlined"
+        secureTextEntry
+        keyboardType="number-pad"
+        maxLength={6}
+      />
+      <Text style={{ fontSize: 16 }}>
+        We sent verification code to your email 0812*******34 You can check your
+        inbox.
+      </Text>
+      <Text style={{ margin: 20, textAlign: "center" }}>
+        I didn’t received the code? Send again
+      </Text>
       <Button
-        contentStyle={{ padding: 10 }}
-        mode="contained"
-        onPress={() => console.log("hi")}
+        onPress={() => navigation.navigate(routes.LANDLORD_SETUPPIN)}
         style={styles.btn}
       >
         Verify
@@ -74,7 +77,7 @@ const styles = StyleSheet.create({
     marginVertical: 10,
   },
   txt: {
-    textAlign: "center",
+    // textAlign: "center",
     fontSize: 30,
   },
 });

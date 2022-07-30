@@ -1,7 +1,8 @@
 import React from "react";
 import { View, StyleSheet, Image } from "react-native";
-import { Button, Text } from "react-native-paper";
-import route from "../../../navigation/route";
+import { Text } from "react-native-paper";
+import Button from "../../../components/Button";
+import route from "../../../routes";
 import colors from "../../../utils/colors";
 
 const SplashScreen1 = ({ navigation }) => {
@@ -18,7 +19,6 @@ const SplashScreen1 = ({ navigation }) => {
         </Text>
       </View>
       <Button
-        contentStyle={{ padding: 10 }}
         onPress={() => navigation.navigate(route.LANDLORD_SPLASH_2)}
         mode="contained"
         style={styles.btn}
